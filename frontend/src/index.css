@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+body {
+  /* Soft, Premium Pink Gradient */
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+  min-height: 100vh;
+  color: #1e293b;
+}

@@ -1,0 +1,5 @@
+/* Reset default Vite styles that interfere with layout */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
