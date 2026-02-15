@@ -271,9 +271,9 @@ export default function FormReport() {
 
     return (
         <div className="min-h-screen p-8" style={{ background: 'linear-gradient(135deg, #fff1f2 0%, #fce7f3 100%)' }}>
-            <div className="max-w-5xl mx-auto mb-4 flex justify-between items-center">
+            <div className="max-w-5xl mx-auto mb-4 flex flex-wrap justify-between items-center gap-2">
                 <button onClick={() => navigate(-1)} className="text-gray-500 hover:text-gray-700">&larr; {t('formReport.back')}</button>
-                <div className="flex gap-3 no-print">
+                <div className="flex flex-wrap gap-2 no-print">
                     <button
                         onClick={() => setShowFormattedReport(true)}
                         className={`px-6 py-2 rounded-lg shadow-md font-medium transition-colors ${showFormattedReport
@@ -392,7 +392,7 @@ export default function FormReport() {
                 </div>
             )}
 
-            <div ref={reportRef} className="max-w-5xl mx-auto bg-white p-12 shadow-lg rounded-xl border border-gray-100">
+            <div ref={reportRef} className="max-w-5xl mx-auto bg-white p-4 sm:p-8 lg:p-12 shadow-lg rounded-xl border border-gray-100">
                 <div className="mb-8 border-b-2 border-gray-200 pb-4">
                     <div className="flex justify-center mb-4">
                         <img src={logo} alt="Maharashtra Police Logo" className="h-24 w-auto" />
@@ -427,6 +427,7 @@ export default function FormReport() {
                             </div>
                         </div>
 
+                        <div className="overflow-x-auto">
                         <table className="w-full border-collapse border border-gray-900 mt-4 text-sm">
                             <thead>
                                 <tr className="bg-white font-bold text-center">
@@ -522,6 +523,7 @@ export default function FormReport() {
                                 })()}
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 ) : (
                     /* Detailed Report View (Original) */

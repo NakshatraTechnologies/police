@@ -85,7 +85,7 @@ export default function FormBuilder({ form, setForm }) {
             {form.questions.map((q, i) => (
                 <div key={q.id} className="bg-white border rounded-lg shadow-sm p-6 relative group transition hover:shadow-md">
                     {/* Header: Label & Type */}
-                    <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-4 mb-4">
                         <div className="flex-1">
                             <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
                                 {q.type === 'section' ? 'Section Title' : 'Question Label'}
@@ -98,7 +98,7 @@ export default function FormBuilder({ form, setForm }) {
                                 placeholder="Enter your question here..."
                             />
                         </div>
-                        <div className="w-1/4 min-w-[150px]">
+                        <div className="w-full sm:w-1/4 sm:min-w-[150px]">
                             <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
                                 Type
                             </label>

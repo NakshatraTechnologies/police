@@ -133,9 +133,9 @@ export default function Dashboard() {
     });
 
     return (
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 relative">
             {/* Header */}
-            <div className="px-4 py-6 sm:px-0 flex flex-col md:flex-row justify-between items-center border-b pb-6 gap-4">
+            <div className="py-6 flex flex-col md:flex-row justify-between items-start md:items-center border-b pb-6 gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-gray-900">{t('dashboard.title')}</h1>
                     <p className="mt-1 text-sm text-gray-500">{t('dashboard.subtitle')}</p>
@@ -252,8 +252,8 @@ export default function Dashboard() {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="bg-gray-50 px-4 py-4 sm:px-6 flex justify-between items-center">
-                                    <div className="flex space-x-3 text-sm">
+                                <div className="bg-gray-50 px-4 py-4 sm:px-6 flex flex-wrap justify-between items-center gap-2">
+                                    <div className="flex flex-wrap gap-2 text-sm">
                                         <button onClick={() => confirmEdit(form._id)} className="text-indigo-600 hover:text-indigo-900 font-medium">{t('dashboard.edit')}</button>
                                         <Link to={`/admin/forms/${form._id}/responses`} className="text-blue-600 hover:text-blue-900 font-medium">{t('dashboard.responses')} ({toMarathiDigits(form.responseCount || 0)})</Link>
                                         <button

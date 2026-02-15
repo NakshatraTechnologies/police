@@ -102,7 +102,7 @@ export default function FormEditor() {
     return (
         <div className="min-h-screen bg-gray-100">
             <header className="bg-white shadow">
-                <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-3">
                     <div className="flex items-center space-x-4">
                         <button onClick={() => navigate('/admin/dashboard')} className="text-gray-500 hover:text-gray-700">&larr; Back</button>
                         <h1 className="text-2xl font-bold text-gray-900">{isNew ? 'Create Form' : 'Edit Form'}</h1>
@@ -126,7 +126,7 @@ export default function FormEditor() {
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Main Sidebar - Settings */}
                     <div className="w-full md:w-1/4 space-y-6 order-2 md:order-1">

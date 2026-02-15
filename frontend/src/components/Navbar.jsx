@@ -18,10 +18,12 @@ export default function Navbar() {
         <nav className="bg-white shadow print:hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link to="/" className="flex items-center text-lg sm:text-xl font-bold text-indigo-600">
-                            <img className="h-10 w-auto mr-2" src={logo} alt="Logo" />
-                            {t('navbar.title')}
+                    <div className="flex items-center flex-1 min-w-0 mr-2">
+                        <Link to="/" className="flex items-center gap-2 text-indigo-600 min-w-0">
+                            <img className="h-8 w-auto sm:h-10 shrink-0" src={logo} alt="Logo" />
+                            <span className="text-xs sm:text-xl font-bold leading-tight truncate">
+                                {t('navbar.title')}
+                            </span>
                         </Link>
                     </div>
 
@@ -77,6 +79,20 @@ export default function Navbar() {
             {isMobileMenuOpen && (
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="pt-2 pb-3 space-y-1">
+                        <div className="flex items-center bg-gray-100 rounded-lg p-1 mx-3 mb-2">
+                            <button
+                                onClick={() => toggleLanguage('en')}
+                                className={`flex-1 px-3 py-1.5 text-xs font-bold rounded-md transition-all ${i18n.language === 'en' ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                            >
+                                English
+                            </button>
+                            <button
+                                onClick={() => toggleLanguage('mr')}
+                                className={`flex-1 px-3 py-1.5 text-xs font-bold rounded-md transition-all ${i18n.language === 'mr' ? 'bg-indigo-600 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                            >
+                                मराठी
+                            </button>
+                        </div>
                         {user && (
                             <div className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">
                                 Welcome, {user.email?.split('@')[0] || 'User'}
